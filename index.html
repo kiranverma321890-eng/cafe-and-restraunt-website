@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Face Cafe & Restaurant | Best Cafe in Indira Nagar, Lucknow</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../a.png">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#eaddd7',
+                            300: '#e0cec7',
+                            400: '#d2bab0',
+                            500: '#a37c68', // Main brand color (warm coffee/wood tone)
+                            600: '#8c6b59',
+                            700: '#684f42',
+                            800: '#4a382f',
+                            900: '#2c211c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for extra polish */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(44, 33, 28, 0.7), rgba(44, 33, 28, 0.7)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-item-hover {
+            transition: all 0.3s ease;
+        }
+
+        .menu-item-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-50 text-brand-900 font-sans">
+
+    <nav class="fixed w-full z-50 glass-panel shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 flex items-center gap-2">
+                        <i class="fa-solid fa-mug-hot text-brand-500 text-2xl"></i>
+                        <span class="font-serif text-2xl font-bold text-brand-800">Sky Face</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-brand-700 hover:text-brand-500 font-medium transition-colors">About</a>
+                    <a href="#menu" class="text-brand-700 hover:text-brand-500 font-medium transition-colors">Menu</a>
+                    <a href="#reviews"
+                        class="text-brand-700 hover:text-brand-500 font-medium transition-colors">Reviews</a>
+                    <a href="#gallery"
+                        class="text-brand-700 hover:text-brand-500 font-medium transition-colors">Gallery</a>
+                    <a href="#contact"
+                        class="text-brand-700 hover:text-brand-500 font-medium transition-colors">Contact</a>
+                    <a href="#contact"
+                        class="bg-brand-500 text-white px-6 py-2 rounded-full font-medium hover:bg-brand-600 transition-colors shadow-md">Find
+                        a Table</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-800 hover:text-brand-500 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-brand-100 absolute w-full shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about"
+                    class="block px-3 py-2 text-brand-700 hover:bg-brand-50 hover:text-brand-500 rounded-md font-medium">About</a>
+                <a href="#menu"
+                    class="block px-3 py-2 text-brand-700 hover:bg-brand-50 hover:text-brand-500 rounded-md font-medium">Menu</a>
+                <a href="#reviews"
+                    class="block px-3 py-2 text-brand-700 hover:bg-brand-50 hover:text-brand-500 rounded-md font-medium">Reviews</a>
+                <a href="#gallery"
+                    class="block px-3 py-2 text-brand-700 hover:bg-brand-50 hover:text-brand-500 rounded-md font-medium">Gallery</a>
+                <a href="#contact"
+                    class="block px-3 py-2 text-brand-700 hover:bg-brand-50 hover:text-brand-500 rounded-md font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg h-screen flex items-center justify-center relative pt-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-900/90"></div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div
+                class="inline-block bg-brand-500/20 backdrop-blur-sm border border-brand-500/30 text-white px-4 py-1 rounded-full text-sm font-medium tracking-wider mb-6 animate-fade-in-up">
+                <i class="fa-solid fa-star text-yellow-400 mr-1"></i> 4.6 (492 Reviews)
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                Sky Face Cafe <br> & Restaurant
+            </h1>
+
+            <p class="text-lg md:text-xl text-brand-100 mb-10 max-w-2xl mx-auto font-light">
+                Indira Nagar's premier destination for pure vegetarian delights. A peaceful haven perfect for couples,
+                families, and intimate gatherings.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu"
+                    class="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Explore Menu
+                </a>
+                <a href="#contact"
+                    class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-medium text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Directions & Info
+                </a>
+            </div>
+
+            <div class="mt-12 flex items-center justify-center gap-6 text-white/80 text-sm md:text-base">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-leaf text-green-400"></i> Pure Veg</span>
+                <span class="w-1 h-1 bg-white/50 rounded-full"></span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-heart text-red-400"></i> Couple
+                    Friendly</span>
+                <span class="w-1 h-1 bg-white/50 rounded-full"></span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-wifi"></i> Free WiFi</span>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/70 hover:text-white transition-colors">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Cafe Interior" class="rounded-2xl shadow-2xl object-cover h-[500px] w-full">
+                    <div
+                        class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl hidden lg:block border border-brand-100">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-brand-100 p-4 rounded-full text-brand-600">
+                                <i class="fa-solid fa-clock text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-brand-500 font-semibold uppercase tracking-wider">Opening Hours
+                                </p>
+                                <p class="text-lg font-bold text-brand-800">6:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 space-y-6">
+                    <div
+                        class="inline-block bg-brand-200 text-brand-800 px-3 py-1 rounded-full text-sm font-semibold uppercase tracking-wider mb-2">
+                        Our Story
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-900 leading-tight">
+                        A Cozy Escape in the Heart of Indira Nagar
+                    </h2>
+                    <p class="text-lg text-brand-700 leading-relaxed">
+                        Welcome to Sky Face Cafe & Restaurant, a peaceful oasis designed for great conversations and
+                        delicious food. Whether you are looking for a quiet spot for a date, a place to celebrate a
+                        birthday, or just crave mouth-watering vegetarian cuisine, we have created the perfect ambiance
+                        for you.
+                    </p>
+                    <p class="text-brand-700 leading-relaxed">
+                        Rated 4.6 by nearly 500 happy guests, we take pride in our warm service, private seating
+                        options, and a menu that blends comforting classics with modern cafe favorites. From crispy
+                        Spring Rolls to creamy Shakes, every item is crafted with love.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 pt-6">
+                        <div class="border-l-4 border-brand-500 pl-4">
+                            <h4 class="font-bold text-brand-900 text-xl">Private Seating</h4>
+                            <p class="text-brand-600 text-sm mt-1">Perfect for couples and private conversations.</p>
+                        </div>
+                        <div class="border-l-4 border-brand-500 pl-4">
+                            <h4 class="font-bold text-brand-900 text-xl">Party Ready</h4>
+                            <p class="text-brand-600 text-sm mt-1">Ideal for birthdays and small gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-white relative">
+        <!-- Decorative element -->
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-brand-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-80 h-80 bg-brand-200 rounded-full blur-3xl opacity-30 translate-y-1/3 -translate-x-1/3">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-semibold uppercase tracking-wider">Discover Our Food</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-900 mt-2 mb-4">Menu Highlights</h2>
+                <p class="text-brand-600">A curated selection of our most loved vegetarian dishes, Chinese delights, and
+                    refreshing beverages. ₹200–400 per person.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Category 1: Chinese & Starters -->
+                <div class="bg-brand-50 rounded-2xl p-8 shadow-sm border border-brand-100 menu-item-hover">
+                    <div class="flex items-center gap-3 mb-6 border-b border-brand-200 pb-4">
+                        <i class="fa-solid fa-bowl-rice text-brand-500 text-2xl"></i>
+                        <h3 class="text-2xl font-serif font-bold text-brand-900">Starters</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Spring Roll</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">Crispy and flavorful assortment of
+                                    fresh vegetables wrapped in a golden shell.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹140</span>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Veg Manchurian (Dry/Gravy)</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">A delectable Chinese delight
+                                    bursting with flavors.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹180</span>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Paneer 65</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">Crispy and flavorsome Chinese-style
+                                    dish with succulent paneer.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹220</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Main Course -->
+                <div class="bg-brand-50 rounded-2xl p-8 shadow-sm border border-brand-100 menu-item-hover">
+                    <div class="flex items-center gap-3 mb-6 border-b border-brand-200 pb-4">
+                        <i class="fa-solid fa-fire-burner text-brand-500 text-2xl"></i>
+                        <h3 class="text-2xl font-serif font-bold text-brand-900">Main Course</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Kadai Paneer</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">Rich medley of soft cheese and
+                                    vibrant spices.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹270</span>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Mushroom Do Pyaza</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">Rich medley of mushrooms and
+                                    aromatic onions.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹280</span>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Jeera Aloo</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">Comforting potato dish with earthy
+                                    flavors and warm spices.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹120</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Pizza & Shakes -->
+                <div class="bg-brand-50 rounded-2xl p-8 shadow-sm border border-brand-100 menu-item-hover">
+                    <div class="flex items-center gap-3 mb-6 border-b border-brand-200 pb-4">
+                        <i class="fa-solid fa-pizza-slice text-brand-500 text-2xl"></i>
+                        <h3 class="text-2xl font-serif font-bold text-brand-900">Pizzas & Shakes</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Paneer Chilli Pizza</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">Spicy Indo-Chinese fusion on a
+                                    crispy base.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹259</span>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Mix Veg Pizza</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">Classic loaded with fresh
+                                    vegetables.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹199</span>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex justify-between items-start">
+                            <div class="pr-4">
+                                <h4 class="font-bold text-brand-800 text-lg">Thick Shakes</h4>
+                                <p class="text-sm text-brand-600 mt-1 line-clamp-2">Oreo, KitKat, Mango, Chocolate, or
+                                    Strawberry.</p>
+                            </div>
+                            <span class="font-bold text-brand-600 text-lg">₹150</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-brand-600 italic mb-4">Full menu available at the cafe. Prices subject to change.</p>
+                <div class="inline-flex gap-4">
+                    <a href="https://www.swiggy.com/city/lucknow/sky-face-cafe-and-restaurant-ishwar-puri-indira-nagar-rest869001"
+                        target="_blank"
+                        class="flex items-center gap-2 bg-[#fc8019] text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition-colors shadow-md">
+                        Order on Swiggy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-20 bg-brand-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-32 opacity-5">
+            <i class="fa-solid fa-quote-right text-9xl"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold mt-2 mb-4">What Our Guests Say</h2>
+                <div class="flex items-center justify-center gap-2 text-2xl text-yellow-400 mb-2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="text-brand-200">4.6 out of 5 based on 492 Google Reviews</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-brand-800 p-8 rounded-2xl border border-brand-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-brand-600 rounded-full flex items-center justify-center text-xl font-bold">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Manish Chaturvedi</h4>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-brand-200 italic">"We were there to celebrate birthday of my betterhalf. Food was
+                        delicious... Overall good experience. Will visit again."</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-800 p-8 rounded-2xl border border-brand-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-brand-600 rounded-full flex items-center justify-center text-xl font-bold">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Prashant Singh</h4>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-brand-200 italic">"Since my Childhood I always feel that I love to having food
+                        specially Chinese food... Nice place, peaceful environment, yummy food 😊😊"</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-800 p-8 rounded-2xl border border-brand-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-brand-600 rounded-full flex items-center justify-center text-xl font-bold">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">pprayan rakshit</h4>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-brand-200 italic">"Nice place for birthday n small gatherings. Good ambiance, taste
+                        in food staff behaviour is also good. Cheap n best place for small parties."</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#"
+                    class="inline-flex items-center gap-2 text-brand-300 hover:text-white transition-colors border-b border-brand-500 pb-1">
+                    Read more reviews on Google <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-serif font-bold text-brand-900 mb-4">Vibe & Food</h2>
+                <p class="text-brand-600">A glimpse into the Sky Face experience.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square rounded-xl overflow-hidden shadow-sm group">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Cafe Food"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="aspect-square rounded-xl overflow-hidden shadow-sm group">
+                    <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Cafe Ambiance"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="aspect-square rounded-xl overflow-hidden shadow-sm group">
+                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Chinese Food"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="aspect-square rounded-xl overflow-hidden shadow-sm group">
+                    <img src="https://img.magnific.com/free-photo/milkshake-set-table_140725-9239.jpg" alt="Milkshake"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+
+                <!-- Contact Info -->
+                <div class="lg:w-1/3 bg-brand-900 text-white p-10 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-serif font-bold mb-8">Visit Us</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-location-dot mt-1 text-brand-400 text-xl w-6"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">Address</h5>
+                                    <p class="text-brand-200 mt-1">D-1408 Kaleva Chauraha,<br>Service Ln, Munshi
+                                        Pulia,<br>Indira Nagar, Lucknow,<br>Uttar Pradesh 226016</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-phone mt-1 text-brand-400 text-xl w-6"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">Phone</h5>
+                                    <p class="text-brand-200 mt-1 cursor-pointer hover:text-white transition-colors"
+                                        onclick="window.copyToClipboard('09719205360', this)">097192 05360 (Click to
+                                        copy)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <i class="fa-solid fa-clock mt-1 text-brand-400 text-xl w-6"></i>
+                                <div>
+                                    <h5 class="font-bold text-lg">Hours</h5>
+                                    <p class="text-brand-200 mt-1">Everyday: 6:00 AM – 10:00 PM</p>
+                                    <p class="text-brand-400 text-sm mt-1">Dine-in · Drive-through · Delivery</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <p class="font-semibold mb-4">Follow Us</p>
+                        <div class="flex gap-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 transition-colors">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 transition-colors">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder & Quick Form -->
+                <div class="lg:w-2/3 p-10 bg-white">
+                    <h3 class="text-2xl font-bold text-brand-900 mb-6">Reserve a Table or Party</h3>
+                    <form id="reservation-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label class="block text-sm font-medium text-brand-700 mb-2">Name</label>
+                            <input type="text" required
+                                class="w-full px-4 py-3 rounded-lg border border-brand-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-brand-50"
+                                placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-700 mb-2">Phone</label>
+                            <input type="tel" required pattern="[0-9]{10,}"
+                                class="w-full px-4 py-3 rounded-lg border border-brand-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-brand-50"
+                                placeholder="10-digit Phone number">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-700 mb-2">Date & Time</label>
+                            <input type="datetime-local" required
+                                class="w-full px-4 py-3 rounded-lg border border-brand-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-brand-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-700 mb-2">Guests</label>
+                            <select
+                                class="w-full px-4 py-3 rounded-lg border border-brand-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-brand-50">
+                                <option>2 People (Couple)</option>
+                                <option>3-4 People</option>
+                                <option>5-8 People</option>
+                                <option>Party (8+)</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit"
+                                class="w-full bg-brand-800 text-white font-bold py-4 rounded-lg hover:bg-brand-900 transition-colors shadow-md flex justify-center items-center gap-2">
+                                <span>Request Reservation</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <p class="text-xs text-center text-brand-500 mt-3">*This will send a request to our team. We
+                                will call you to confirm.</p>
+                        </div>
+                    </form>
+                    <div class="w-full h-64 bg-brand-100 rounded-xl overflow-hidden relative border border-brand-200">
+                        <div class="absolute inset-0">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14234.958636566796!2d80.9781999!3d26.8800113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3854ea0119b%3A0x6da61a66768d34d6!2sSky%20face%20cafe%20%26%20Restaurant%20%7C%20Best%20cafe%20%7C%20Couple%20cafe%20%7C%20Indira%20Nagar!5e0!3m2!1sen!2sin!4v1783415965088!5m2!1sen!2sin"
+                                class="w-full h-full rounded-lg border-0" loading="lazy" allowfullscreen
+                                referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="success-modal"
+        class="fixed inset-0 z-[100] flex items-center justify-center hidden bg-black/60 backdrop-blur-sm transition-opacity">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 transform scale-95 transition-transform duration-300"
+            id="modal-content">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-check text-3xl text-green-500"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-brand-900 mb-2">Request Sent!</h3>
+                <p class="text-brand-600 mb-6">Thank you for choosing Sky Face Cafe. We have received your reservation
+                    request and will call you shortly to confirm.</p>
+                <button id="close-modal-btn"
+                    class="w-full bg-brand-500 text-white font-bold py-3 rounded-lg hover:bg-brand-600 transition-colors">
+                    Awesome!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-brand-900 text-brand-300 py-8 border-t border-brand-800">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Sky Face Cafe & Restaurant. All rights reserved.</p>
+            <div class="flex gap-6 text-sm">
+                <span class="flex items-center gap-1"><i class="fa-solid fa-leaf text-green-500"></i> Pure Veg</span>
+                <span>LGBTQ+ Friendly</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on link click
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+
+            // Navbar background change on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-md');
+                    navbar.classList.replace('bg-transparent', 'glass-panel');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Reservation Form Handling
+            const reserveForm = document.getElementById('reservation-form');
+            const successModal = document.getElementById('success-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modalContent = document.getElementById('modal-content');
+
+            if (reserveForm) {
+                reserveForm.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Prevent the page from refreshing
+
+                    // Show the success modal
+                    successModal.classList.remove('hidden');
+                    // Small delay to allow CSS transition to play
+                    setTimeout(() => {
+                        modalContent.classList.remove('scale-95');
+                        modalContent.classList.add('scale-100');
+                    }, 10);
+
+                    // Clear the form fields
+                    reserveForm.reset();
+                });
+            }
+
+            // Function to close the modal
+            function closeModal() {
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    successModal.classList.add('hidden');
+                }, 300); // Wait for the transition to finish
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', closeModal);
+            }
+
+            // Close modal if user clicks outside the white box
+            if (successModal) {
+                successModal.addEventListener('click', (e) => {
+                    if (e.target === successModal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // Custom Copy to Clipboard Function (Replacing default alert)
+            window.copyToClipboard = function (text, element) {
+                // Create a temporary textarea element
+                const tempTextArea = document.createElement("textarea");
+                tempTextArea.value = text;
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    const originalText = element.innerText;
+                    element.innerHTML = '<i class="fa-solid fa-check mr-1"></i> Copied!';
+                    element.classList.add('text-green-400');
+
+                    // Revert text back after 2 seconds
+                    setTimeout(() => {
+                        element.innerText = originalText;
+                        element.classList.remove('text-green-400');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy', err);
+                }
+
+                document.body.removeChild(tempTextArea);
+            };
+        });
+    </script>
+</body>
+
+</html>
